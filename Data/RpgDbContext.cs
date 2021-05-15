@@ -11,5 +11,6 @@ namespace DotNetCore_RPG.Data
         }
 
         public DbSet<Character> characters {get;set;}
+        public DbSet<User> users {get; set;}
     }
 }

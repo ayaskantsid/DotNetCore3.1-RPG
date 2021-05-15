@@ -4,14 +4,16 @@ using DotNetCore_RPG.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotNetCore_RPG.Migrations
 {
     [DbContext(typeof(RpgDbContext))]
-    partial class RpgDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210515193916_user")]
+    partial class user
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,12 +46,7 @@ namespace DotNetCore_RPG.Migrations
                     b.Property<int>("Strength")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("characters");
                 });
@@ -73,15 +70,6 @@ namespace DotNetCore_RPG.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("users");
-                });
-
-            modelBuilder.Entity("DotNetCore_RPG.Models.Character", b =>
-                {
-                    b.HasOne("DotNetCore_RPG.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
