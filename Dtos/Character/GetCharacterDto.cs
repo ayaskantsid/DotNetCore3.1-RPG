@@ -1,3 +1,4 @@
+using DotNetCore_RPG.Dtos.Weapon;
 using DotNetCore_RPG.Models;
 
 namespace DotNetCore_RPG.Dtos.Character
@@ -11,5 +12,6 @@ namespace DotNetCore_RPG.Dtos.Character
         public int Defense { get; set; } = 10;
         public int Intelligence { get; set; } = 10;
         public RpgClass Class { get; set; } = RpgClass.Knights;
+        public GetWeaponDto Weapon { get; set; }
     }
 }

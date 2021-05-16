@@ -1,5 +1,6 @@
 using AutoMapper;
 using DotNetCore_RPG.Dtos.Character;
+using DotNetCore_RPG.Dtos.Weapon;
 using DotNetCore_RPG.Models;
 
 namespace DotNetCore_RPG
@@ -10,6 +11,7 @@ namespace DotNetCore_RPG
         {
             CreateMap<Character,GetCharacterDto>();
             CreateMap<AddCharacterDto,Character>();
+            CreateMap<Weapon, GetWeaponDto>();
         }
     }
 }
